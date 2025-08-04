@@ -12,7 +12,8 @@ provider "aws" {
   region = local.aws_region
 }
 
-resource "aws_s3_bucket" "eks_terraform_backend" {
-  bucket = "eks-terraform-backend-2025-1234"
-  tags   = local.default_tags
-}
+// This bucket is created to store Terraform state files in the default workspace.
+# resource "aws_s3_bucket" "eks_terraform_backend" {
+#   bucket = "eks-terraform-backend-2025-1234"
+#   tags   = local.default_tags
+# }
