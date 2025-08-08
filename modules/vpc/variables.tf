@@ -31,3 +31,10 @@ variable "tags" {
   default     = {}
 }
 
+variable "igw_tags" {
+  description = "A map of tags to assign to the Internet Gateway"
+  type        = map(string)
+  default     = {}
+}
+
+

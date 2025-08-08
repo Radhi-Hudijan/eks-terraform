@@ -16,3 +16,18 @@ resource "aws_vpc" "main" {
 }
 
 
+############
+# internet Gateway
+############
+resource "aws_internet_gateway" "main" {
+  vpc_id = aws_vpc.main.id
+  tags = merge(
+    {
+      Name = "${var.name}-igw-${terraform.workspace}"
+    },
+    var.tags,
+    var.igw_tags
+  )
+}
+
+############
